@@ -1,7 +1,6 @@
-"""Extract ip address from the system info.
-Modify the data from dictionary to a list format"""
-
 import psutil
+import pandas
+from pandas import *
 
 addrs = psutil.net_if_addrs()
 
@@ -17,6 +16,7 @@ for key, value in addrs.items():
         port_list.append(port_data)
         port_data = []
 
-for item in port_list:
-    print(item)
-
+df = pandas.DataFrame(port_list)
+df.columns = ["Port Name","Family","IP Address","Broadcast","Netmask","PTP"]
+df_final = df.fillna("None")
+df_final.to_csv("Psutil.csv", index=None)
