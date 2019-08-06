@@ -1,3 +1,5 @@
+::Create batch file to execute python file
+
 @set path=%PATH%;\\teentaal\vi_tools\sve_tools_python\Python37 \Lib\site-packages;\\teentaal\vi_tools\sve_tools_python\Python37\Lib
 
 @set path=%PATH%;C:\Windows\System32\downlevel
