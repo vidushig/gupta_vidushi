@@ -1,3 +1,6 @@
+"""Extract ip address from the system info.
+Modify the data from dictionary to a list format"""
+
 import psutil
 
 addrs = psutil.net_if_addrs()
